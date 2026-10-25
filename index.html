@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Área triangular · Las maravillas de la geometría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="hoja">
+
+    <!-- Encabezado -->
+    <header class="encabezado">
+      <div class="titulo">
+        <svg class="icono-triangulo" viewBox="0 0 64 56" aria-hidden="true">
+          <polygon points="32,4 60,52 4,52" />
+        </svg>
+        <div>
+          <h1>Área triangular</h1>
+          <p class="lema">Las maravillas de la geometría</p>
+        </div>
+      </div>
+      <div class="grado" aria-label="Octavo grado">
+        <span>Octavo<br>grado</span>
+        <strong>8</strong>
+      </div>
+    </header>
+
+    <main class="paneles">
+
+      <!-- Agregar ejercicio -->
+      <section class="panel" aria-labelledby="t-agregar">
+        <h2 id="t-agregar">Agregar ejercicio</h2>
+
+        <label for="nombre">Nombre del ejercicio</label>
+        <input id="nombre" type="text" placeholder="Ej: Triángulo A" autocomplete="off">
+
+        <div class="fila-3">
+          <div>
+            <label for="altura">Altura h</label>
+            <input id="altura" type="number" min="0" step="any" placeholder="2">
+          </div>
+          <div>
+            <label for="base">Base b</label>
+            <input id="base" type="number" min="0" step="any" placeholder="6">
+          </div>
+          <div>
+            <label for="unidad">Unidad</label>
+            <select id="unidad">
+              <option value="cm">cm</option>
+              <option value="mm">mm</option>
+              <option value="m">m</option>
+              <option value="km">km</option>
+              <option value="in">in</option>
+            </select>
+          </div>
+        </div>
+
+        <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+
+        <div class="acciones">
+          <button id="btn-calcular" class="btn btn-primario">Calcular</button>
+          <button id="btn-guardar" class="btn btn-secundario">Guardar</button>
+        </div>
+        <button id="btn-limpiar" class="btn btn-linea">Limpiar formulario</button>
+      </section>
+
+      <!-- Resultado -->
+      <section class="panel" aria-labelledby="t-resultado">
+        <h2 id="t-resultado">Resultado</h2>
+
+        <div class="formula">
+          <span class="etiqueta-caja">Fórmula</span>
+          <div class="fraccion-linea">
+            A<sub>T</sub> =
+            <span class="fraccion"><span>b · h</span><span>2</span></span>
+          </div>
+        </div>
+
+        <ul class="leyenda">
+          <li><b>A<sub>T</sub></b> = Área del triángulo</li>
+          <li><b>b</b> = Base</li>
+          <li><b>h</b> = Altura</li>
+        </ul>
+
+        <div class="resultado-doble">
+          <div class="caja">
+            <h3>Procedimiento</h3>
+            <p id="paso1" class="paso">Calcula para ver los pasos.</p>
+            <p id="paso2" class="paso"></p>
+          </div>
+          <div class="caja caja-area">
+            <h3>Área del triángulo</h3>
+            <p id="area" class="area">—</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lista de ejercicios -->
+      <section class="panel" aria-labelledby="t-lista">
+        <h2 id="t-lista">Lista de ejercicios</h2>
+        <div class="tabla-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th><th>Nombre</th><th>b</th><th>h</th><th>A<sub>T</sub></th><th>Acción</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-cuerpo"></tbody>
+          </table>
+        </div>
+        <p id="vacio" class="vacio">Aún no hay ejercicios. Calcula uno y pulsa Guardar.</p>
+      </section>
+    </main>
+
+    <!-- Barra inferior -->
+    <nav class="barra" aria-label="Acciones sobre ejercicios">
+      <button id="btn-nuevo" class="btn-barra">Agregar nuevo ejercicio</button>
+      <button id="btn-modificar" class="btn-barra">Modificar ejercicio</button>
+      <button id="btn-eliminar" class="btn-barra">Eliminar ejercicio</button>
+      <button id="btn-consultar" class="btn-barra">Consultar ejercicio</button>
+    </nav>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
